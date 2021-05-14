@@ -1,0 +1,467 @@
+@charset "UTF-8";
+
+/* ===========================================================================
+  base
+============================================================================= */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video, a {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+	display: block;
+}
+
+nav ul,
+nav ol {
+	list-style: none;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+th, td {
+	vertical-align: middle;
+	word-break: break-all;
+	}
+
+input,
+select {
+	vertical-align: middle;
+	appearance: none;
+}
+
+*,*::before,*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	line-height: 1.68;
+}
+
+body {
+	font-size: 1.5rem;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+	color: #000;
+	word-wrap: break-word;
+	overflow-wrap : break-word;
+}
+
+img {
+	max-width: 100%;
+	width: auto;
+	height: auto;
+	vertical-align: bottom;
+}
+
+/* win7 IE11対応 */
+img[src$=".svg"] {
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+select {
+	outline: none;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+input,
+textarea {
+	font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+	border-radius: 0;
+	border: 0;
+	outline: none;
+}
+
+[type="submit"],
+[type="reset"],
+[type="button"],
+button {
+	border: 0;
+	cursor: pointer;
+}
+
+/* 印刷時は無効 */
+@media print {
+	html,
+	body {
+		display: block;
+	}
+	body {
+		min-height: auto;
+	}
+	footer {
+		margin-top: 0;
+	}
+}
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
+
+img {
+	width: auto;
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+
+input:focus,button:focus {
+  outline: none;
+}
+
+/* ===========================================================================
+  util
+============================================================================= */
+.pc {
+	display: block!important;
+}
+
+.sp {
+	display: none!important;
+}
+
+.ta-center {
+	text-align: center!important;
+}
+
+.ta-right {
+	text-align: right!important;
+}
+
+.error {
+  color: #f00;
+}
+
+/* ===========================================================================
+  header
+============================================================================= */
+.header {
+  background-color: #04009A;
+  padding: 10px 0;
+}
+
+.header_inner {
+  width: 96%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header_title {
+  font-size: 2.0rem;
+  color: #fff;
+}
+
+/* ===========================================================================
+  footer
+============================================================================= */
+.footer {
+  background-color: #333;
+  padding: 10px 0;
+}
+
+.footer_inner {
+  width: 96%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer_inner > p {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+/* ===========================================================================
+  headerNav
+============================================================================= */
+.headerNav {
+	position:fixed;
+  top:0;
+  right:0;
+  height: 100vh;
+  background: #fff;
+  padding: 20px 25px;
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-transition:ease .3s;
+  transition:ease .3s;
+  z-index:9999;
+  background-color: #fff;
+	opacity: 0.95;
+}
+
+.headerNav.is-active {
+	-webkit-transform:translateX(0);
+  transform:translateX(0);
+  overflow-y: auto;
+}
+
+.headerNav_inner {
+  position: relative;
+	padding: 0;
+	width: 100%;
+	margin: 0 auto;
+}
+
+/* ===========================================================================
+  contentsArea
+============================================================================= */
+.contentsArea {
+	max-width: 1000px;
+  width: 96%;
+  margin: 0 auto;
+}
+
+/* ===========================================================================
+  input
+============================================================================= */
+.input-01 {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #9e9e9e;
+  background: #fff;
+  padding: 10px;
+}
+
+.input-02 {
+  appearance: auto;
+  margin-right: 10px;
+}
+
+/* ===========================================================================
+  section
+============================================================================= */
+.section-01 {
+  padding: 60px 0 100px;
+}
+
+/* ===========================================================================
+  haeding02
+============================================================================= */
+.heading02Wrap {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.heading02 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-align: center;
+  padding-left: 15px;
+  border-left: 4px solid #04009A;
+  display: inline-block;
+}
+
+/* ===========================================================================
+  form
+============================================================================= */
+.form-group + .form-group {
+  margin-top: 20px;
+}
+
+/* ===========================================================================
+  btn
+============================================================================= */
+.btnWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-01 {
+	display: inline-block;
+  padding: 5px 15px;
+	margin: 0 auto;
+	background-color: #04009A;
+  border: 2px solid #04009A;
+	transition: 0.2s;
+  width: auto;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.btn-01:hover {
+	background-color: #fff;
+  color: #04009A;
+	opacity: 1.0;
+}
+
+.btn-02 {
+	display: inline-block;
+  padding: 0 3px;
+	margin: 0 auto;
+	background-color: #f00;
+	transition: 0.2s;
+  width: auto;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+.btn-02:hover {
+  color: #fff;
+}
+
+.btn-03 {
+	display: inline-block;
+  padding: 5px 15px;
+	margin: 0 auto;
+	background-color: #77ACF1;
+  border: 2px solid #77ACF1;
+	transition: 0.2s;
+  width: auto;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.btn-03:hover {
+	background-color: #fff;
+  color: #77ACF1;
+	opacity: 1.0;
+}
+
+/* ===========================================================================
+  loginArea
+============================================================================= */
+.loginArea {
+	max-width: 768px;
+  width: 96%;
+  margin: 0 auto;
+}
+
+/* ===========================================================================
+  msgArea
+============================================================================= */
+.msgArea {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+}
+
+.msgArea + .msgArea {
+  margin-top: 20px;
+}
+
+.msgArea_img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.msgArea_text {
+  display: flex;
+  width: calc(100% - 50px);
+}
+
+.msgArea_box {
+  display: flex;
+  align-items: end;
+}
+
+.msgArea_box_img {
+  width: 50px;
+}
+
+
+/* ===========================================================================
+  pagingArea
+============================================================================= */
+.pagingArea {
+	display: flex;
+	justify-content: center;
+}
+
+.pagingArea_item + .pagingArea_item {
+	margin-left: 85px;
+}
+
+.pagingArea_item {
+  list-style-type: none;
+}
+
+.pagingArea_item > a:hover {
+	opacity: 0.7;
+}
+
+/* ===========================================================================
+  icon
+============================================================================= */
+.icon_required {
+  color: #fff;
+  font-size: 1.1rem;
+  background-color: #77ACF1;
+  border-radius: 5px;
+  padding: 3px 8px;
+  margin-left: 10px;
+}
+
+.icon_option {
+  color: #fff;
+  font-size: 1.1rem;
+  background-color: #ccc;
+  border-radius: 5px;
+  padding: 3px 8px;
+  margin-left: 10px;
+}
+
+/* ===========================================================================
+  btnArea
+============================================================================= */
+.btnArea {
+  text-align: center;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+
+	/* ===========================================================================
+		util
+	============================================================================= */
+  .pc {
+    display: none!important;
+  }
+
+  .sp {
+    display: block!important;
+  }
+
+}
